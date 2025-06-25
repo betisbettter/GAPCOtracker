@@ -52,7 +52,7 @@ init_db()
 
 # Streamlit app layout
 st.set_page_config(layout="wide")
-st.title("GAP -> CO Training Tracker")
+st.title("Pittsburg -> DC Training Tracker")
 
 # Sidebar for submission form
 with st.sidebar:
@@ -84,9 +84,9 @@ tabs = st.tabs(["Goals", "Training Tracker"])
 # Goals Tab
 with tabs[0]:
     st.header("Goals")
-    st.write("**1)** Improve FTP")
+    st.write("**1)** Improve Functional Threshold Power (FTP)")
     st.write("**2)** Improve body composition")
-    st.write("**3)** Complete GAP-CO for female FKT submission")
+    st.write("**3)** Complete the GAP Trail and the C&O canal, 334.5 miles, for female fastest known time and World Ultra Cycling Associaton submissions")
     
     st.subheader("Monthly Total Mileage")
     st.write("**July:** 700 miles")
@@ -95,9 +95,9 @@ with tabs[0]:
 
     st.header("Ride Definitions")
     st.write("**Short ride:** 10-30 miles, hill repeats, interval sprints, or indoor trainer")
-    st.write("**Medium ride:** 31-80 miles, high effort pace")
-    st.write("**Long ride:** 81-115 miles, endurance pace")
-    st.write("**XL ride:** >115 miles aiming for ~125-150 miles, endurance pace")
+    st.write("**Medium ride:** 31-80 miles, push FTP")
+    st.write("**Long ride:** 81-115 miles, within FTP")
+    st.write("**XL ride:** >115 miles aiming for ~125-150 miles, within FTP")
 
     st.header("Weekly Plan")
     
@@ -105,7 +105,7 @@ with tabs[0]:
         "Monday": {
             "Intensity": "Low-Mid",
             "AM": "Rest or Pete",
-            "PM": "Animal Flow or FTP",
+            "PM": "Animal Flow or FTP test",
             "Total workout time": "0-2 hrs"
         },
         "Tuesday": {
@@ -203,3 +203,8 @@ with tabs[1]:
             st.write("No data yet for this day of the week.")
 
         st.write("---")  # Separator for better readability
+
+with tabs[2]:
+    st.header("Nutritian")
+
+    pass
