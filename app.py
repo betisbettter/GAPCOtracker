@@ -52,7 +52,7 @@ init_db()
 
 # Streamlit app layout
 st.set_page_config(layout="wide")
-st.title("Pittsburg -> DC Training Tracker")
+st.title("GAP -> CO Training Tracker")
 
 # Sidebar for submission form
 with st.sidebar:
