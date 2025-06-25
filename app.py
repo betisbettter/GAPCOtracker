@@ -79,7 +79,7 @@ with st.sidebar:
     st.image("gapco.png")
 
 # Create tabs for the app
-tabs = st.tabs(["Goals", "Training Tracker"])
+tabs = st.tabs(["Goals", "Training Tracker", "Nutritian"])
 
 # Goals Tab
 with tabs[0]:
