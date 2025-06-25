@@ -204,7 +204,7 @@ with tabs[1]:
 
         st.write("---")  # Separator for better readability
 
-with tabs[0]:
+with tabs[2]:
     st.header("Nutritian")
 
     pass
