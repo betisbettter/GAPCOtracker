@@ -86,7 +86,7 @@ with tabs[0]:
     st.header("Goals")
     st.write("**1)** Improve Functional Threshold Power (FTP)")
     st.write("**2)** Improve body composition")
-    st.write("**3)** Complete the GAP Trail and the C&O canal, 334.5 miles, for female fastest known time and World Ultra Cycling Associaton submissions")
+    st.write("**3)** Complete the GAP Trail and the C&O canal, 334.5 miles, for female Fastest Known Time and World Ultra Cycling Associaton submissions")
     
     st.subheader("Monthly Total Mileage")
     st.write("**July:** 700 miles")
