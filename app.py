@@ -52,7 +52,7 @@ init_db()
 
 # Streamlit app layout
 st.set_page_config(layout="wide")
-st.title("GAP -> CO Training Tracker")
+st.title("Pittsburg -> DC Training Tracker")
 
 # Sidebar for submission form
 with st.sidebar:
@@ -86,7 +86,7 @@ with tabs[0]:
     st.header("Goals")
     st.write("**1)** Improve FTP")
     st.write("**2)** Improve body composition")
-    st.write("**3)** Complete GAP-CO for female FKT submission")
+    st.write("**3)** Complete the GAP Trail and the C&O canal, 334.5 miles, for female fastest known time and World Ultra Cycling Associaton submissions")
     
     st.subheader("Monthly Total Mileage")
     st.write("**July:** 700 miles")
