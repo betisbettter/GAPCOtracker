@@ -3,12 +3,11 @@ import pandas as pd
 import sqlite3
 from datetime import datetime, timedelta
 import calendar
-
-import psycopg2
+import psycopg
 import streamlit as st
 
 def get_connection():
-    return psycopg2.connect(st.secrets["database"]["url"])
+    return psycopg.connect(st.secrets["database"]["url"])
 
 # Database setup
 def init_db():
@@ -50,7 +49,7 @@ def delete_training_entry(entry_id):
     c.execute('DELETE FROM training_schedule WHERE id = %s', (entry_id,))
     conn.commit()
     conn.close()
-    
+
 # Initialize the database
 init_db()
 
