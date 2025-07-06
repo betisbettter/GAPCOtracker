@@ -4,15 +4,20 @@ import sqlite3
 from datetime import datetime, timedelta
 import calendar
 
+import psycopg2
+import streamlit as st
+
+def get_connection():
+    return psycopg2.connect(st.secrets["database"]["url"])
+
 # Database setup
 def init_db():
-    conn = sqlite3.connect('training_app.db')
+    conn = get_connection()
     c = conn.cursor()
-    # Create training_schedule table if it doesn't exist
     c.execute('''
         CREATE TABLE IF NOT EXISTS training_schedule (
-            id INTEGER PRIMARY KEY,
-            date TEXT,
+            id SERIAL PRIMARY KEY,
+            date DATE,
             activity TEXT,
             miles REAL,
             nutrition_goal_met BOOLEAN
@@ -21,32 +26,31 @@ def init_db():
     conn.commit()
     conn.close()
 
-# Function to add a new training entry
 def add_training_entry(date, activity, miles, nutrition_goal_met):
-    conn = sqlite3.connect('training_app.db')
+    conn = get_connection()
     c = conn.cursor()
     c.execute('''
         INSERT INTO training_schedule (date, activity, miles, nutrition_goal_met)
-        VALUES (?, ?, ?, ?)
+        VALUES (%s, %s, %s, %s)
     ''', (date, activity, miles, nutrition_goal_met))
     conn.commit()
     conn.close()
 
 # Function to retrieve training entries
 def get_training_entries():
-    conn = sqlite3.connect('training_app.db')
+    conn = get_connection()
     df = pd.read_sql_query('SELECT * FROM training_schedule', conn)
     conn.close()
     return df
 
 # Function to delete an entry
 def delete_training_entry(entry_id):
-    conn = sqlite3.connect('training_app.db')
+    conn = get_connection()
     c = conn.cursor()
-    c.execute('DELETE FROM training_schedule WHERE id = ?', (entry_id,))
+    c.execute('DELETE FROM training_schedule WHERE id = %s', (entry_id,))
     conn.commit()
     conn.close()
-
+    
 # Initialize the database
 init_db()
 
